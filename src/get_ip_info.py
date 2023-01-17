@@ -2,10 +2,6 @@ import click
 import requests
 from tabulate import tabulate
 
-@click.group()
-def cli():
-    pass
-
 @click.command()
 @click.option('--ip_input', required=True, help='The range of IP addresses to query.')
 def ip_status(ip_input):
@@ -45,8 +41,6 @@ def retrieve_all_ip_addresses():
     response = requests.get(f"http://localhost:8080/servers")
     all_ip_addresses = response.json()
     return all_ip_addresses
-
-cli.add_command(ip_status)
 
 if __name__ == '__main__':
     ip_status()

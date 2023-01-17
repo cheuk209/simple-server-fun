@@ -9,9 +9,6 @@ create-env:
 install: install-poetry create-env
 	poetry install
 
-run:
-	poetry run python3 main.py
-
 test:
 	export PYTHONPATH=$(PYTHONPATH):$(CURDIR)/src
 	poetry run pytest

@@ -9,7 +9,6 @@ def display_unhealthy_services():
     healthy_entries = {}
     unhealthy_services = []
     all_ip_addresses = retrieve_all_ip_addresses()
-    print("Fish", all_ip_addresses)
     for ip in all_ip_addresses:
         ip_info = get_ip_status_info(ip)
         if ip_info[2] == "Healthy":
